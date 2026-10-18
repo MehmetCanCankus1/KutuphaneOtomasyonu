@@ -1,0 +1,25 @@
+# Sanal ortam
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Veritabanı (uygulama ilk çalışınca örnek verilerle yeniden oluşur)
+*.db
+*.sqlite3
+
+# İşletim sistemi ve editör dosyaları
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Ortam değişkenleri ve log dosyaları
+.env
+*.log

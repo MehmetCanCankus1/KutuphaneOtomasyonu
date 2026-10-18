@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Üniversite Online Kütüphane Yönetim Sistemi</title>
+  <meta name="description" content="Üniversite öğrencileri ve kütüphane yöneticileri için kitap, ödünç, iade, gecikme cezası ve borç yönetimi paneli." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+
+  <div class="relative z-10 min-h-screen lg:flex">
+    <!-- Kenar çubuğu -->
+    <aside class="lg:w-72 lg:min-h-screen lg:sticky lg:top-0 lg:h-screen p-4 lg:p-5 flex flex-col gap-4">
+      <div class="glass p-4 flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center text-white shadow-lg" style="background:linear-gradient(135deg,#7c5cff,#22d3ee)">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.25v13m0-13C10.83 5.48 9.25 5 7.5 5S4.17 5.48 3 6.25v13C4.17 18.48 5.75 18 7.5 18s3.33.48 4.5 1.25m0-13C13.17 5.48 14.75 5 16.5 5c1.75 0 3.33.48 4.5 1.25v13C19.83 18.48 18.25 18 16.5 18c-1.75 0-3.33.48-4.5 1.25"/></svg>
+        </div>
+        <div class="leading-tight">
+          <p class="font-display font-bold text-lg gradient-text">Kütüphane</p>
+          <p class="text-xs text-slate-400">Online Yönetim Sistemi</p>
+        </div>
+      </div>
+
+      <nav id="menu" class="glass p-2 flex lg:flex-col gap-1 overflow-x-auto" aria-label="Ana menü"></nav>
+
+      <div class="glass p-4 hidden lg:block mt-auto text-xs text-slate-400 leading-relaxed">
+        <p class="font-semibold text-slate-200 mb-1">Ceza Kuralı</p>
+        Geciken her gün için <span class="text-amber-300 font-semibold">10 TL</span>. İade sırasında ceza kaydı otomatik oluşur.
+      </div>
+    </aside>
+
+    <!-- İçerik -->
+    <div class="flex-1 min-w-0 p-4 lg:p-6 lg:pl-1">
+      <header class="glass p-4 lg:p-5 flex flex-wrap items-center justify-between gap-4 mb-5">
+        <div>
+          <h1 id="sayfaBaslik" class="font-display text-2xl lg:text-3xl font-bold">Kütüphane</h1>
+          <p id="sayfaAlt" class="text-sm text-slate-400 mt-0.5"></p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <span id="borcRozeti"></span>
+          <div class="min-w-[230px]">
+            <label for="kullaniciSec" class="lbl">Aktif Kullanıcı (Demo Giriş)</label>
+            <select id="kullaniciSec" class="input"></select>
+          </div>
+        </div>
+      </header>
+
+      <main id="icerik" aria-live="polite"></main>
+    </div>
+  </div>
+
+  <div id="toasts" class="fixed top-4 right-4 z-[70] flex flex-col gap-3"></div>
+  <div id="modalKok"></div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
